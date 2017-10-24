@@ -2,7 +2,7 @@
 
 
 class Node(object):
-    """."""
+    """Creates a node object"""
 
     def __init__(self, data, next):
         """Constructor for the Node object."""
@@ -11,7 +11,7 @@ class Node(object):
 
 
 class LinkedList(object):
-    """."""
+    """Class for containing object called LinkedList"""
 
     def __init__(self, iterable=()):
         """Constructor for the Linked List object."""
@@ -41,20 +41,21 @@ class LinkedList(object):
         return self._counter
 
     def __len__(self):
-        """."""
+        """Works with len() function to find length of linked list"""
         return self._counter
 
     def search(self):
-        """."""
+        """Searches for a given node value and returns it"""
         curr = self.head
         while curr.data == val:
             return curr
         curr = curr.next
 
     def remove(self):
-        """."""
+        """Searches for a given node value and remove it from the linked list"""
         pass
 
     def display(self):
-        """."""
+        """Will return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”
+"""
         pass
