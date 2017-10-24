@@ -21,7 +21,7 @@ class LinkedList(object):
             for item in iterable:
                 self.push(item)
 
-    def push(self):
+    def push(self, val):
         """Add a new value to the head of the linked list."""
         new_head = Node(val, self.head)
         self.head = new_head
@@ -44,7 +44,7 @@ class LinkedList(object):
         """Works with len() function to find length of linked list"""
         return self._counter
 
-    def search(self):
+    def search(self, val):
         """Searches for a given node value and returns it"""
         curr = self.head
         while curr.data == val:
@@ -56,6 +56,7 @@ class LinkedList(object):
         pass
 
     def display(self):
-        """Will return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”
-"""
+        """Will return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”"""
+
+#make sure print(linked_list) will run the display method       
         pass
