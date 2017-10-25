@@ -47,15 +47,23 @@ class LinkedList(object):
     def search(self, val):
         """Search for a given node value and returns it"""
         curr = self.head
-        while curr.data == val:
-            return curr
-        curr = curr.next
+        while curr.next:
+            while curr.data == val:
+                return curr
+            curr = curr.next
 
-    def remove(self):
-        """Searches for a given node value and remove it from the linked list"""
-        pass
+    
+    def remove(self, value):
+        """Search for a given node value and remove it."""
+        curr = self.head
+        while curr.next:
+            while curr.next.data == value:
+                curr.next = curr.next.next
+            curr = curr.next
+
 
     def display(self):
+        """Return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”"""
         st = "("
         curr = self.head
         while curr.next is not None:
@@ -63,9 +71,7 @@ class LinkedList(object):
             curr = curr.next
         st = st[:-2] + ")"
         return st
-        """Will return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”"""
 
-#make sure print(linked_list) will run the display method    
 
 a_list = [4, 3, 2, 6, 4, 9, 8]
 newList = LinkedList(a_list)
