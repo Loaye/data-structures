@@ -24,8 +24,7 @@ def test_linked_list_push_adds_new_item():
     from linked_list_code_base import LinkedList
     l = LinkedList()
     l.push('val')
-    l.push('val2')
-    assert l.head.data == 'val2'
+    assert l.head.data == 'val'
 
 
 def test_linked_list_push_two_new_item():
