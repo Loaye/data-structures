@@ -45,7 +45,7 @@ class LinkedList(object):
         return self._counter
 
     def search(self, val):
-        """Searches for a given node value and returns it"""
+        """Search for a given node value and returns it"""
         curr = self.head
         while curr.data == val:
             return curr
@@ -56,7 +56,18 @@ class LinkedList(object):
         pass
 
     def display(self):
+        st = "("
+        curr = self.head
+        while curr.next is not None:
+            st += "'{}', ".format(curr.data)
+            curr = curr.next
+        st = st[:-2] + ")"
+        return st
         """Will return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”"""
 
-#make sure print(linked_list) will run the display method       
-        pass
+#make sure print(linked_list) will run the display method    
+
+a_list = [4, 3, 2, 6, 4, 9, 8]
+newList = LinkedList(a_list)
+newList.push(1)
+print(newList.display())
