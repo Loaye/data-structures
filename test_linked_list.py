@@ -98,12 +98,12 @@ def test_linked_list_size_returns_list_length2(n):
     assert l.size() == n
 
 
-# def test_linked_list_search__empty_returns_none():
-#     """."""
-#     from linked_list import LinkedList
-#     l = LinkedList()
-#     l.push(1)
-#     assert l.search(1) is 1
+def test_linked_list_search_empty_returns_none():
+    """."""
+    from linked_list import LinkedList
+    l = LinkedList()
+    l.push(1)
+    assert l.search(4) is None
 
 
 # def test_linked_list_search_returns_with_one_return_node():
