@@ -7,7 +7,6 @@
 
 ## Singly Linked List(SLL)
 -----------------------
-
 A Singly Linked List is the containing/parent element to a collection on Nodes. The SLL flows in one direction with a head in the front of the list and with a tail pointing to None.
 
 [H][Random Node] -> [Random Node] -> [Random Node][T] -> None
@@ -23,8 +22,23 @@ A Singly Linked List is the containing/parent element to a collection on Nodes. 
 
 #### Pop
 * *pop()* removes a node from the front of the SLL and returns the value
+* Time Complexity = 0(1)
 
+#### Size
+* *size()* implements a counter for when pushing and popping nodes. When called size returns the size of the SLL.
+* Time Complexity = 0(1)
 
+#### Search
+* *search()* looks for a given Node value in a SLL, and returns that value.
+* Time Complexity = 0(1)
+
+#### Remove
+* *remove()* will look for a given Node value and remove it from a SLL.
+* Time Complexity = 0(1)
+
+#### Display
+* *display()* Will return a unicode string representing the list as if it were a Python tuple literal.
+* Time Complexity = 0(1)
 ## Stack
 -------------------
 ### Stack - Methods
@@ -36,6 +50,4 @@ A Singly Linked List is the containing/parent element to a collection on Nodes. 
 
 #### Pop
 * The *pop()* method removes a new Node off the top of the stack. This stack uses FILO, which is First In Last Out.
-The Time Complexity for this method is 0(1). Time is constant because you do not have to iterate through the list.
-
 * Time Complexity = O(1)
