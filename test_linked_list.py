@@ -134,13 +134,13 @@ def test_linked_list_search__with_one_bad_search2(n):
     assert l.search(search_me).data == search_me
 
 
-# def test_linked_list_can_take_iterable():
-#     """."""
-#     from linked_list import LinkedList
-#     a_list = [4, 3, 2, 6, 4, 9, 8]
-#     l = LinkedList(a_list)
-#     for item in a_list:
-#         pass  # assert l.search(item).data == item
+def test_linked_list_can_take_iterable():
+    """Test to see that list can take a list or tuple."""
+    from linked_list import LinkedList
+    a_list = [4, 3, 2, 6, 4, 9, 8]
+    l = LinkedList(a_list)
+    for item in a_list:
+        assert l.search(item).data == item
 
 
 # def test_linked_list_display():
