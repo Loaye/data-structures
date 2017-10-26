@@ -106,12 +106,12 @@ def test_linked_list_search_empty_returns_none():
     assert l.search(4) is None
 
 
-# def test_linked_list_search_returns_with_one_return_node():
-#     """Test that search method will retrn as stated."""
-#     from linked_list import LinkedList
-#     l = LinkedList()
-#     l.push(1)
-#     assert l.search(1) == l.head
+def test_linked_list_search_returns_with_one_return_node():
+    """Test that search method will return as stated."""
+    from linked_list import LinkedList
+    l = LinkedList()
+    l.push(1)
+    assert l.search(1) == l.head
 
 
 def test_linked_list_search__with_one_bad_search():
