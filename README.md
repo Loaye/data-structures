@@ -1,12 +1,12 @@
 # Data-Structures
 -------------------
-*[Singly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/linked_list.html)
-*[Doubly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/double_linked_list.html)
-*[Stack](https://codefellows.github.io/sea-python-401d7/lectures/stack.html)
-*[Queue](https://codefellows.github.io/sea-python-401d7/lectures/queue.html)
+* [Singly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/linked_list.html)
+* [Doubly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/double_linked_list.html)
+* [Stack](https://codefellows.github.io/sea-python-401d7/lectures/stack.html)
+* [Queue](https://codefellows.github.io/sea-python-401d7/lectures/queue.html)
 
 ## Singly Linked List(SLL)
------------------------
+=============================
 A Singly Linked List is the containing/parent element to a collection on Nodes. The SLL flows in one direction with a head in the front of the list and with a tail pointing to None.
 
 [H][Random Node] -> [Random Node] -> [Random Node][T] -> None
