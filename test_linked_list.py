@@ -122,16 +122,16 @@ def test_linked_list_search__with_one_bad_search():
     assert l.search(0) is None
 
 
-# @pytest.mark.parametrize('n', range(1, 10))
-# def test_linked_list_search__with_one_bad_search2(n):
-#     """."""
-#     from linked_list import LinkedList
-#     from random import randint
-#     l = LinkedList()
-#     for i in range(1, n + 1):
-#         l.push(i)
-#     search_me = randint(1, n)
-#     assert l.search(search_me).data == search_me
+@pytest.mark.parametrize('n', range(1, 10))
+def test_linked_list_search__with_one_bad_search2(n):
+    """Test that checks the search method for a bad value."""
+    from linked_list import LinkedList
+    from random import randint
+    l = LinkedList()
+    for i in range(1, n + 1):
+        l.push(i)
+    search_me = randint(1, n)
+    assert l.search(search_me).data == search_me
 
 
 # def test_linked_list_can_take_iterable():
