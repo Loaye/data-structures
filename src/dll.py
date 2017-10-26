@@ -25,6 +25,9 @@ class DoublyLinkedList(object):
 
     def push(self, val):
         """."""
+        # curr = Node(val, self.head)
+        # self.head = curr.next.prev
+        # self._counter += 1
 
     def append(self, val):
         """."""
