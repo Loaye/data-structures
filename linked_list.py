@@ -69,14 +69,14 @@ class LinkedList(object):
         """
         st = "("
         curr = self.head
-        while curr.next is not None:
+        while curr:
             st += "'{}', ".format(curr.data)
             curr = curr.next
         st = st[:-2] + ")"
         return st
 
 
-a_list = [4, 3, 2, 6, 4, 9, 8]
+a_list = [4, 3, 2, 6, 1, 9, 8]
 newList = LinkedList(a_list)
 newList.push(1)
 print(newList.display())

@@ -143,9 +143,9 @@ def test_linked_list_can_take_iterable():
         assert l.search(item).data == item
 
 
-# def test_linked_list_display():
-#     """."""
-#     from linked_list import LinkedList
-#     a_list = [4, 3, 2, 6, 4, 9, 8]
-#     new_list = LinkedList(a_list)
-#     assert new_list.display() == ('1', '8', '9', '4', '6', '2', '3')
+def test_linked_list_display():
+    """."""
+    from linked_list import LinkedList
+    a_list = [4, 3, 2, 6, 1, 9, 8]
+    new_list = LinkedList(a_list)
+    assert new_list.display() == str(('8', '9', '1', '6', '2', '3', '4'))
