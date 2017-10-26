@@ -144,7 +144,7 @@ def test_linked_list_can_take_iterable():
 
 
 def test_linked_list_display():
-    """."""
+    """Test to display a tuple in a linked list"""
     from linked_list import LinkedList
     a_list = [4, 3, 2, 6, 1, 9, 8]
     new_list = LinkedList(a_list)
