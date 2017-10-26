@@ -1,17 +1,16 @@
 # Data-Structures
 -------------------
-* [Singly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/linked_list.html)
-* [Doubly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/double_linked_list.html)
-* [Stack](https://codefellows.github.io/sea-python-401d7/lectures/stack.html)
-* [Queue](https://codefellows.github.io/sea-python-401d7/lectures/queue.html)
+[Singly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/linked_list.html)
+[Doubly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/double_linked_list.html)
+[Stack](https://codefellows.github.io/sea-python-401d7/lectures/stack.html)
+[Queue](https://codefellows.github.io/sea-python-401d7/lectures/queue.html)
 
 ## Singly Linked List(SLL)
-=============================
 A Singly Linked List is the containing/parent element to a collection on Nodes. The SLL flows in one direction with a head in the front of the list and with a tail pointing to None.
 
 [H][Random Node] -> [Random Node] -> [Random Node][T] -> None
 ### SLL - Methods
-
+-------------------
 #### __init__
 * *__init__()* Instaniates a new node
 * Time Complexity = O(1)
@@ -40,8 +39,8 @@ A Singly Linked List is the containing/parent element to a collection on Nodes. 
 * *display()* Will return a unicode string representing the list as if it were a Python tuple literal.
 * Time Complexity = 0(1)
 ## Stack
--------------------
 ### Stack - Methods
+-------------------
 * We inherited all the methods from Singly Linked List. The only difference is that we were more explicit with our *pop()* method to work for the stack. In case the stack is empty, the method raises an *IndexError*.
 
 #### Push
