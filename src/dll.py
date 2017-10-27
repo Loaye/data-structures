@@ -45,7 +45,11 @@ class DoublyLinkedList(object):
         return output
 
     def shift(self):
-        """."""
+        """Removes a given Node value from the end/tail of the list"""
+        if not self.tail:
+            raise IndexError("The List is empty, so there is nothing to shift/remove.")
+        
+
 
     def remove(self, val):
         """Search for a given node value and remove it."""
