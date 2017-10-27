@@ -30,7 +30,10 @@ class DoublyLinkedList(object):
         self._counter += 1
 
     def append(self, val):
-        """."""
+        """Adds a node to the end/tail side of the DLL"""
+        curr = Node(val, self.tail)
+        self.tail = curr.prev.next
+        self._counter += 1
 
     def pop(self):
         """Remove & return the value of the head of the DLL."""
