@@ -39,6 +39,7 @@ A Singly Linked List is the containing/parent element to a collection on Nodes. 
 * *display()* Will return a unicode string representing the list as if it were a Python tuple literal.
 * Time Complexity = 0(1)
 ## Stack
+A stack has a First In Last Out(FILO) order. 
 ### Stack - Methods
 -------------------
 We inherited all the methods from Singly Linked List. The only difference is that we were more explicit with our *pop()* method to work for the stack. In case the stack is empty, the method raises an *IndexError*.
