@@ -59,14 +59,15 @@ class DoublyLinkedList(object):
 
     def remove(self, val):
         """Search for a given node value and remove it."""
-       
-        if curr.data = self.head:
+        
+        curr = self.head
+
+        if self.head = val:
             pop()
 
-        if curr.data = self.tail:
+        if self.tail = val:
             shift()
 
-        curr = self.head
         while curr:
             if curr.data == val:
                 curr.prev.next = curr.next
