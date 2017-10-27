@@ -63,15 +63,17 @@ class DoublyLinkedList(object):
         if curr.data = self.head:
             pop()
 
-        elif curr.data = self.tail:
+        if curr.data = self.tail:
             shift()
 
-        elif:
-            curr.prev.next = curr.next
-            curr.next.prev = curr.prev
-            self._counter -= 1
-        
-        else:
-            raise ValueError("Node not in current List")
+        curr = self.head
+        while curr:
+            if curr.data == val:
+                curr.prev.next = curr.next
+                curr.next.prev = curr.prev
+                self._counter -= 1
+                return curr
+            else:
+                curr = curr.next
 
-        
+        raise ValueError("Node not in current List")
