@@ -37,12 +37,12 @@ class DoublyLinkedList(object):
 
     def pop(self):
         """Remove & return the value of the head of the DLL."""
-        # if not self.head:
-        #     raise IndexError("The List is empty, so there's nothing to pop.")
-        # output = self.head.data
-        # self.head = self.head.next
-        # self._counter -= 1
-        # return output
+        if not self.head:
+            raise IndexError("The List is empty, so there's nothing to pop.")
+        out = self.head.data
+        self.head = self.head.next
+        self._counter -= 1
+        return out
 
     def shift(self):
         """."""
