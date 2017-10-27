@@ -45,9 +45,9 @@ A stack has a First In Last Out(FILO) order.
 We inherited all the methods from Singly Linked List. The only difference is that we were more explicit with our *pop()* method to work for the stack. In case the stack is empty, the method raises an *IndexError*.
 
 #### Push
-* The *push()* method pushes a new Node into a stack. This stack uses FILO, which is First In Last Out.
+* *push()* method pushes a new Node into a stack. This stack uses FILO, which is First In Last Out.
 * Time Complexity  = O(1)
 
 #### Pop
-* The *pop()* method removes a new Node off the top of the stack. This stack uses FILO, which is First In Last Out.
+* *pop()* method removes a new Node off the top of the stack. This stack uses FILO, which is First In Last Out.
 * Time Complexity = O(1)
