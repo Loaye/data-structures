@@ -1,9 +1,9 @@
 # Data-Structures
 -------------------
-[Singly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/linked_list.html)
-[Doubly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/double_linked_list.html)
-[Stack](https://codefellows.github.io/sea-python-401d7/lectures/stack.html)
-[Queue](https://codefellows.github.io/sea-python-401d7/lectures/queue.html)
+* [Singly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/linked_list.html)
+* [Doubly Linked List](https://codefellows.github.io/sea-python-401d7/lectures/double_linked_list.html)
+* [Stack](https://codefellows.github.io/sea-python-401d7/lectures/stack.html)
+* [Queue](https://codefellows.github.io/sea-python-401d7/lectures/queue.html)
 
 ## Singly Linked List(SLL)
 A Singly Linked List is the containing/parent element to a collection on Nodes. The SLL flows in one direction with a head in the front of the list and with a tail pointing to None.
@@ -41,7 +41,7 @@ A Singly Linked List is the containing/parent element to a collection on Nodes. 
 ## Stack
 ### Stack - Methods
 -------------------
-* We inherited all the methods from Singly Linked List. The only difference is that we were more explicit with our *pop()* method to work for the stack. In case the stack is empty, the method raises an *IndexError*.
+We inherited all the methods from Singly Linked List. The only difference is that we were more explicit with our *pop()* method to work for the stack. In case the stack is empty, the method raises an *IndexError*.
 
 #### Push
 * The *push()* method pushes a new Node into a stack. This stack uses FILO, which is First In Last Out.
