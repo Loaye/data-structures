@@ -62,10 +62,10 @@ class DoublyLinkedList(object):
         
         curr = self.head
 
-        if self.head = val:
+        if self.head == val:
             pop()
 
-        if self.tail = val:
+        if self.tail == val:
             shift()
 
         while curr:
