@@ -23,6 +23,10 @@ class DoublyLinkedList(object):
             for item in iterable:
                 self.push(item)
 
+    def __len__(self):
+        """Will work with the len() function to find length of the DLL."""
+        return self._counter
+
     def push(self, val):
         """Add a new value to the head of the linked list."""
         curr = Node(val, self.head)
@@ -48,22 +52,26 @@ class DoublyLinkedList(object):
         """Removes a given Node value from the end/tail of the list"""
         if not self.tail:
             raise IndexError("The List is empty, so there is nothing to shift/remove.")
-        
-
+        output = self.tail.data
+        self.tail = self.tail.prev
+        self._counter -= 1
+        return output
 
     def remove(self, val):
         """Search for a given node value and remove it."""
-        # curr = self.head
-        # while curr:
-        #     if curr.next == node:
-        #         curr.next = curr.next.next
-        #     curr = curr.next
-        # return curr
+       
+        if curr.data = self.head:
+            pop()
 
-    def size(self):
-        """Return the size of our list."""
-        # return self._counter
+        elif curr.data = self.tail:
+            shift()
 
-    def __len__(self):
-        """Will work with the len() function to find length of the DLL."""
-        # return self.counter
+        elif:
+            curr.prev.next = curr.next
+            curr.next.prev = curr.prev
+            self._counter -= 1
+        
+        else:
+            raise ValueError("Node not in current List")
+
+        
