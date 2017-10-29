@@ -1,4 +1,3 @@
-"""File implements a stack with push and pop methods."""
 from linked_list import LinkedList
 
 

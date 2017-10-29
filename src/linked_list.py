@@ -4,6 +4,7 @@
 class Node(object):
     """Creates a node object"""
 
+    
     def __init__(self, data, next):
         """Constructor for the Node object."""
         self.data = data
@@ -41,22 +42,41 @@ class LinkedList(object):
         return self._counter
 
     def __len__(self):
-        """Works with len() function to find length of linked list"""
+        """Will work with len() function to find length of linked list."""
         return self._counter
 
     def search(self, val):
-        """Searches for a given node value and returns it"""
+        """Search for a given node value and returns it."""
         curr = self.head
-        while curr.data == val:
-            return curr
-        curr = curr.next
+        while curr:
+            if curr.data == val:
+                return curr
+            curr = curr.next
+        return curr
 
-    def remove(self):
-        """Searches for a given node value and remove it from the linked list"""
-        pass
+    def remove(self, node):
+        """Search for a given node value and remove it."""
+        curr = self.head
+        while curr.next:
+            while curr.next == node:
+                curr.next = curr.next.next
+            curr = curr.next
+        return curr
 
     def display(self):
-        """Will return a unicode string representing the list as if it were a Python tuple literal: “(12, ‘sam’, 37, ‘tango’)”"""
+        u"""Will return a unicode string representing the list as if it were a.
 
-#make sure print(linked_list) will run the display method       
-        pass
+        Python tuple literal: “(12, ‘sam’, 37, ‘tango’).
+        """
+        st = "("
+        curr = self.head
+        while curr:
+            st += "'{}', ".format(curr.data)
+            curr = curr.next
+        st = st[:-2] + ")"
+        return st
+
+a_list = [4, 3, 2, 6, 1, 9, 8]
+newList = LinkedList(a_list)
+newList.push(1)
+print(newList.display())
