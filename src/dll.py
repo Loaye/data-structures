@@ -1,6 +1,5 @@
 """Doubly linked list creation."""
 
-
 class Node(object):
     """This creates a node object."""
 
