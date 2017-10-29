@@ -1,18 +1,21 @@
 """Implentation of a Queue."""
+
+
 from dll import DoublyLinkedList
+
 
 class Queue(object):
     """Creates a Queue class."""
 
     def __init__(self):
-        """Initialization of the queue"""
+        """Initialization of the queue."""
         self._dll = DoublyLinkedList()
         self._counter = self._dll._counter
         self.head = self._dll.head
         self.tail = self._dll.tail
 
     def __len__(self):
-        """Overwrites Python built in len function."""
+        """Overwrite Python built in len function."""
         return self.counter
 
     def length(self):
@@ -28,7 +31,7 @@ class Queue(object):
         return self._dll.shift()
 
     def peek(self):
-        """Displays a value without removing it."""
+        """Display a value without removing it."""
         if self.length == 0:
             return None
         return self._dll.tail.data

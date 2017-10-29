@@ -34,7 +34,7 @@ class DoublyLinkedList(object):
         self._counter += 1
 
     def append(self, val):
-        """Adds a node to the end/tail side of the DLL"""
+        """Add a node to the end/tail side of the DLL."""
         curr = Node(val, self.tail)
         self.tail = curr.prev.next
         self._counter += 1
@@ -49,9 +49,9 @@ class DoublyLinkedList(object):
         return output
 
     def shift(self):
-        """Removes a given Node value from the end/tail of the list"""
+        """Remove a given Node value from the end/tail of the list."""
         if not self.tail:
-            raise IndexError("The List is empty, so there is nothing to shift/remove.")
+            raise IndexError("The List is empty, there is nothing to shift.")
         output = self.tail.data
         self.tail = self.tail.prev
         self._counter -= 1
@@ -59,15 +59,11 @@ class DoublyLinkedList(object):
 
     def remove(self, val):
         """Search for a given node value and remove it."""
-        
         curr = self.head
-
         if self.head == val:
             pop()
-
         if self.tail == val:
             shift()
-
         while curr:
             if curr.data == val:
                 curr.prev.next = curr.next
