@@ -17,7 +17,6 @@ def dll_three_nodes():
     d.push(15)
     return d
 
-
 def test_node_object_exists():
     """Tests that the Node Class is working"""
     from dll import Node
