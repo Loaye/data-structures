@@ -20,17 +20,16 @@ def test_linked_list_has_head():
 
 
 def test_linked_list_push_adds_new_item():
-    """Test that push method add a new item to Linked list."""
-    from linked_list import LinkedList
+    """Test that new item was added to list."""
+    from linked_list_code_base import LinkedList
     l = LinkedList()
     l.push('val')
-    l.push('val2')
-    assert l.head.data == 'val2'
+    assert l.head.data == 'val'
 
 
 def test_linked_list_push_two_new_item():
-    """Test that push method adds 2 new items to linked list."""
-    from linked_list import LinkedList
+    """Test that list pushed 2 items into the SLL"""
+    from linked_list_code_base import LinkedList
     l = LinkedList()
     l.push('val')
     l.push('val2')
@@ -87,7 +86,6 @@ def test_linked_list_size_returns_list_length():
     l = LinkedList()
     assert l.size() == 0
 
-
 @pytest.mark.parametrize('n', range(100))
 def test_linked_list_size_returns_list_length2(n):
     """Test that size method returns proper length from a random list."""
@@ -97,14 +95,12 @@ def test_linked_list_size_returns_list_length2(n):
         l.push(i)
     assert l.size() == n
 
-
 def test_linked_list_search_empty_returns_none():
     """."""
     from linked_list import LinkedList
     l = LinkedList()
     l.push(1)
     assert l.search(4) is None
-
 
 def test_linked_list_search_returns_with_one_return_node():
     """Test that search method will return as stated."""
@@ -120,7 +116,6 @@ def test_linked_list_search__with_one_bad_search():
     l = LinkedList()
     l.push(1)
     assert l.search(0) is None
-
 
 @pytest.mark.parametrize('n', range(1, 10))
 def test_linked_list_search__with_one_bad_search2(n):
