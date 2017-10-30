@@ -1,5 +1,6 @@
 """Test for the stack."""
 
+
 import pytest
 
 
@@ -28,8 +29,9 @@ def test_len_function_returns_counter():
     s.push("beans")
     assert len(s) == 2
 
+
 def test_using_list_to_instantiate():
-    """Object constructor can use a list"""
+    """Object constructor can use a list."""
     from stack import Stack
     values = [1, 2, 3]
     s = Stack(values)
