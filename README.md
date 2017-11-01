@@ -52,14 +52,14 @@ Much like a SLL, the only difference is that the DLL can traverse the list both 
 * Time Complexity = O(1)
 
 #### __len__
-* *__len__()* Returns the lenth of the DLL
-* Time Complexity = #TODO
+* *__len__()* replaces the default Python  len() function and returns the lenth of the DLL using a counter.
+
 #### Push
-* *push()* adds a new node to the front of the SLL
+* *push()* adds a new node to the front/head of the DLL.
 * Time Complexity = O(1)
 
 #### Append
-* *append()* adds a new node to the end/tail side of the DLL
+* *append()* adds a new node to the end/tail side of the DLL.
 * Time Complexity = O(1)
 
 #### Pop
@@ -100,4 +100,22 @@ A Queue utilizes the First In First Out (FIFO) priority order. An easy way to th
 ---------------------
 
 #### __init__
-* *__init__()* will instantiate a new Queue.
+* *__init__()* Instantiates a new Queue.
+
+#### __len__
+* *__len__()*  replaces the default Python  len() function and returns the the length of the Queue using a counter.
+
+#### Length
+* *length()* uses a counter to count the length of the Queue.
+
+#### Enqueue
+* *enqueue()* adds a node to the head of the queue. If a node is present it seats it behind it.
+* Time Complexity = 0(1)
+
+#### Dequeue
+* *dequeue()* removes a node from the head of the queue. If a node isn't present it will return an *IndexError()* and message.
+* Time Complexity = 0(1)
+
+#### Peek
+* *peek()* will display the value of a node without removing it from the Queue.
+* Time Complexity = 0(1)
