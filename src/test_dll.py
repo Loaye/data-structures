@@ -1,15 +1,60 @@
-"""test for Doubly linked list."""
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+"""Test for DLL."""
 
 
 import pytest
 
 
+@pytest.fixture
+def dll_empty():
+    """Set up out empty dll for testing."""
+    from dll import DoublyLinkedList
+    return DoublyLinkedList()
+
+
+@pytest.fixture
+def dll_three_nodes():
+    """Set up the fixture process used for testing."""
+    from dll import DoublyLinkedList
+    d = DoublyLinkedList
+    d.push(5)
+    d.push(10)
+    d.push(15)
+    return d
+=======
+>>>>>>> 10f611599dd85ea275019f2a7502d2fdd09901c4
+"""test for Doubly linked list."""
+
+
+import pytest
+
+<<<<<<< HEAD
+=======
+>>>>>>> master
+
+
 def test_node_object_exists():
-    """Tests that the Node Class is working"""
+    """Test that the Node Class is working."""
     from dll import Node
     node = Node(0, 1, 3)
     assert node
 
+<<<<<<< HEAD
+
+def test_search_found(dll_empty):
+    """Test that search will find the given node value in the DLL."""
+    dll_empty.push(20)
+    assert dll_empty.search(20)
+
+
+def test_size_after_tail_has_been_removed(dll_three_nodes):
+    """Test the size of the dll after a tail has been removed."""
+    dll_three_nodes.remove(5)
+    assert dll_three_nodes.size() == 2
+=======
+>>>>>>> 10f611599dd85ea275019f2a7502d2fdd09901c4
 
 def test_node_has_attributes():
     """Test that Node has attributes."""
@@ -49,6 +94,13 @@ def test_dll_can_take_iterable():
         assert l.search(item).data == item
 
 
+<<<<<<< HEAD
+def test_len_process():
+    """."""
+
+
+=======
+>>>>>>> 10f611599dd85ea275019f2a7502d2fdd09901c4
 def test_dll_push_adds_new_item():
     """Test that push method add a new item to Linked list."""
     from dll import push
@@ -57,6 +109,9 @@ def test_dll_push_adds_new_item():
     l.push('val2')
     assert l.head.data == 'val2'
 
+<<<<<<< HEAD
+
+=======
     
 def test_push_to_empty_adds_value_to_head(dll_empty):
     """Test that the pushed node gives value to head."""
@@ -70,6 +125,7 @@ def test_push_to_empty_sets_head_and_tail(dll_empty):
     assert dll_empty.head is dll_empty.tail
 
     
+>>>>>>> 10f611599dd85ea275019f2a7502d2fdd09901c4
 def test_dll_push_two_new_item():
     """Test that push method adds 2 new items to linked list."""
     from dll import push
@@ -93,12 +149,18 @@ def test_append():
     from dll import append
     l = dll()
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
+
 
 def test_append_adds_value_to_tail(dll_empty):
-    """Test that appended value is the tail"""
+    """Test that appended value is the tail."""
     dll_empty.append(1)
     assert dll_empty.tail == tail.data
     
+
 
 def test_append_multiple_vals_to_tail(dll_empty):
     """Test that last value appended is the tail."""
@@ -107,6 +169,19 @@ def test_append_multiple_vals_to_tail(dll_empty):
     dll_empty.append(9)
     assert dll_empty.tail.data == 9
 
+<<<<<<< HEAD
+
+def test_push_to_empty_adds_value_to_head(dll_empty):
+    """Test that the pushed node gives value to head."""
+    dll_empty.push(1)
+    assert dll_empty.head.data == 1
+
+
+def test_push_to_empty_sets_head_and_tail(dll_empty):
+    """Test to push empty."""
+    dll_empty.push(1)
+    assert dll_empty.head is dll_empty.tail
+=======
 
 def test_search_found(dll_empty):
     """Test that search will find the given node value in the DLL"""
@@ -120,6 +195,7 @@ def test_size_after_tail_has_been_removed(dll_three_nodes):
     assert dll_three_nodes.size() == 2    
     
     
+>>>>>>> 10f611599dd85ea275019f2a7502d2fdd09901c4
 def test_dll_pop_removes_head_and_returns_value():
     """Test that pop method removes the head and returns its value."""
     from dll import pop
@@ -127,17 +203,29 @@ def test_dll_pop_removes_head_and_returns_value():
     l.push('potato')
     l.pop()
     assert l.head is None
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 
 def test_display_empty_dll(dll_empty):
     """Test will display empty."""
     assert dll_empty.display() == "()"
 
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> master
 def test_display_filled_dll(dll_empty):
-    """Test to show the the values of ."""
+    """Test to show the the values of all nodes."""
     dll_empty.append(5)
     dll_empty.append(10)
     dll_empty.append(15)
     assert dll_three_nodes.display() == "(5, 10, 15)"
+<<<<<<< HEAD
+=======
     
+>>>>>>> master
+>>>>>>> 10f611599dd85ea275019f2a7502d2fdd09901c4
