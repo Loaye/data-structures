@@ -3,10 +3,10 @@
 class Node(object):
     """This creates a node object."""
 
-    def __init__(self, data, next, prev):
+    def __init__(self, data, next_node, prev):
         """Constructor for the Node object."""
         self.data = data
-        self.next = next
+        self.next_node = next_node
         self.prev = prev
 
 
@@ -29,13 +29,13 @@ class DoublyLinkedList(object):
     def push(self, val):
         """Add a new value to the head of the linked list."""
         curr = Node(val, self.head)
-        self.head = curr.next.prev
+        self.head = curr.next_node.prev
         self._counter += 1
 
     def append(self, val):
         """Adds a node to the end/tail side of the DLL"""
         curr = Node(val, self.tail)
-        self.tail = curr.prev.next
+        self.tail = curr.prev.next_node
         self._counter += 1
 
     def pop(self):
@@ -43,7 +43,7 @@ class DoublyLinkedList(object):
         if not self.head:
             raise IndexError("The List is empty, so there's nothing to pop.")
         output = self.head.data
-        self.head = self.head.next
+        self.head = self.head.next_node
         self._counter -= 1
         return output
 
@@ -69,11 +69,11 @@ class DoublyLinkedList(object):
 
         while curr:
             if curr.data == val:
-                curr.prev.next = curr.next
-                curr.next.prev = curr.prev
+                curr.prev.next_node = curr.next_node
+                curr.next_node.prev = curr.prev
                 self._counter -= 1
                 return curr
             else:
-                curr = curr.next
+                curr = curr.next_node
 
         raise ValueError("Node not in current List")

@@ -1,21 +1,6 @@
 """Tests for DLL"""
 import pytest
 
-@pytest.fixture
-def dll_empty():
-    """."""
-    from dll import DoublyLinkedList
-    return DoublyLinkedList()
-
-@pytest.fixture
-def dll_three_nodes():
-    """."""
-    from dll import DoublyLinkedList
-    d = DoublyLinkedList
-    d.push(5)
-    d.push(10)
-    d.push(15)
-    return d
 
 def test_node_object_exists():
     """Tests that the Node Class is working"""
@@ -65,4 +50,3 @@ def test_display_filled_dll(dll_empty):
     dll_empty.append(10)
     dll_empty.append(15)
     assert dll_three_nodes.display() == "(5, 10, 15)"
-
