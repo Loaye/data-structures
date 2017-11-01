@@ -5,7 +5,7 @@
 * [Stack](https://codefellows.github.io/sea-python-401d7/lectures/stack.html)
 * [Queue](https://codefellows.github.io/sea-python-401d7/lectures/queue.html)
 
-## Singly Linked List(SLL)
+## Singly Linked List (SLL)
 A Singly Linked List is the containing/parent element to a collection on Nodes. The SLL flows in one direction with a head in the front of the list and with a tail pointing to None.
 
 [H][Random Node] -> [Random Node] -> [Random Node][T] -> None
@@ -29,6 +29,42 @@ A Singly Linked List is the containing/parent element to a collection on Nodes. 
 
 #### Search
 * *search()* looks for a given Node value in a SLL, and returns that value.
+* Time Complexity = 0(1)
+
+#### Remove
+* *remove()* will look for a given Node value and remove it from a SLL.
+* Time Complexity = 0(1)
+
+#### Display
+* *display()* Will return a unicode string representing the list as if it were a Python tuple literal.
+* Time Complexity = 0(1)
+
+## Doubly Linked List (DLL)
+Much like a SLL, the only difference is that the DLL can traverse the list both ways.
+
+### DLL - Methods
+-------------------
+#### __init__
+* *__init__()* Instaniates a new node
+* Time Complexity = O(1)
+
+#### __len__
+* *__len__()* Returns the lenth of the DLL
+* Time Complexity = #TODO
+#### Push
+* *push()* adds a new node to the front of the SLL
+* Time Complexity = O(1)
+
+#### Append
+* *append()* adds a new node to the end/tail side of the DLL
+* Time Complexity = O(1)
+
+#### Pop
+* *pop()* removes a node from the front of the DLL and returns the value
+* Time Complexity = 0(1)
+
+#### Shift
+* *shift()* removes a node from the end/tail of the DLL and returns the value.
 * Time Complexity = 0(1)
 
 #### Remove

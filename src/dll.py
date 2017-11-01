@@ -51,15 +51,7 @@ class DoublyLinkedList(object):
     def shift(self):
         """Remove a given Node value from the end/tail of the list."""
         if not self.tail:
-<<<<<<< HEAD
             raise IndexError("The List is empty, there is nothing to shift.")
-=======
-<<<<<<< HEAD
-            raise IndexError("The List is empty, there is nothing to remove.")
-=======
-            raise IndexError("The List is empty, there is nothing to shift.")
->>>>>>> master
->>>>>>> 10f611599dd85ea275019f2a7502d2fdd09901c4
         output = self.tail.data
         self.tail = self.tail.prev
         self._counter -= 1
