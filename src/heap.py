@@ -12,24 +12,60 @@ class Node(object):
         self.parent = parent
 
 
-class Binheap(object):
+class BinaryHeap(object):
     """Instantiates a heap organized by max data values."""
 
-    def __init__(self):
+    def __init__(self, items=[]):
         """."""
-        self.heap = []
+        for i in items:
+            self.heap.append(i)
+            self.__floatUp(len(self.heap) - 1)
 
     def push(self, data):
         """Push a node into a heap using breadth first."""
-        pass
+        self.heap.data(data)
+        self.__floatup(len(self.heap) - 1)
 
-"""
-having items in a list, to detirmine its postition, use '//' to detirmine its
-parent. Example: Put all nodes in a list, burn [0], so every node is in its
-node position, [56, 45, 46, 34, 39, 40, 31, 21, 25, 29, 22, 23, 24, 28, 26],
-where 56 is obviously in [1], 45 is [2] and so on. Then take [6] & [7], and //
-2, which would be 3 for each (because of the //) so both are the child of [3].
-Then compare [6] to [3] higher value is reassigned (or remains) [3]. If [6] was
-NOT higher, then compare [7] to [3], and so on.
+    def pop(self):
+        """Pop the head, or the largest value, off the heap."""
+        if len(self.heap) > 2:
+            self.__swap(1, len(self.heap) - 1)
+            max = self.heap.pop()
+            self.__bubbleDown(1)
+        elif len(self.heap) == 2:
+            max = self.heap.pop()
+        else:
+            max = False
+        return max
 
-"""
+    def peek(self):
+        """See the value in the top node, if there is one."""
+        if self.heap[1]:
+            return self.heap[1]
+        else:
+            return "the list is empty, nothing the see here, move along."
+
+    def __swap(self, i, j):
+        """Swap 2 nodes in the heap for sorting purposes."""
+        self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
+
+    def __float_up(self, index):
+        """Float the child above the parent if the value is greater."""
+        parent = index // 2
+        if index <= 1:
+            return
+        elif self.heap[index] > self.heap[parent]:
+            self.__swap(index, parent)
+            self.__floatUp(parent)
+
+    def __bubbledown(self, index):
+        left = index * 2
+        right = index * 2 + 1
+        largest = index
+        if len(self.heap) > left and self.heap[largest] < self.heap[left]:
+            largest = left
+        if len(self.heap) > right and self.heap[largest] < self.heap[right]:
+            largest = right
+        if largest != index:
+            self.__swap(index, largest)
+            self.__bubbledown(largest)
