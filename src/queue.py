@@ -16,7 +16,7 @@ class Queue(object):
 
     def __len__(self):
         """Overwrite Python built in len function."""
-        return self.counter
+        return self._counter
 
     def length(self):
         """Will use DLL counter for length."""

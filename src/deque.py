@@ -4,7 +4,7 @@
 class Node(object):
     """this creates a node object that will be used for our deque."""
 
-    def __init__(self, val, prev, next_node):
+    def __init__(self, val):
         """Constructor for the deque project."""
         self.val = val
         self.prev = None
@@ -14,7 +14,7 @@ class Node(object):
 class Deque(object):
     """The class for containing an object called Deque."""
 
-    def __init__(self, ):
+    def __init__(self):
         """Constructor for the deque."""
         self.head = None
         self.tail = None
@@ -23,7 +23,7 @@ class Deque(object):
 
     def append(self, val):
         """Function adds value the end of the deque."""
-        curr = Node(val, self.tail)
+        curr = Node(val)
         self.tail = curr.prev.next_node
         self._counter += 1
 
