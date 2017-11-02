@@ -61,7 +61,7 @@ class Deque(object):
         return output
 
     def peek(self):
-        """Return the next value that would be returned by pop but leaves the value in the deque."""
+        """Return the next value that would be returned by pop but leaves thevalue in the deque."""
         if not self.tail.val:
             raise IndexError("The List is empty, there's nothing to see.")
         return self.tail.val
