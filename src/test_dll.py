@@ -1,4 +1,5 @@
-"""test for Doubly linked list."""
+"""Test for Doubly linked list."""
+
 
 import pytest
 
@@ -39,7 +40,7 @@ def test_size_after_tail_has_been_removed(dll_three_nodes):
     dll_three_nodes.remove(5)
     assert dll_three_nodes.size() == 2
 
-
+    
 def test_node_has_attributes():
     """Test that Node has attributes."""
     from dll import Node
@@ -86,7 +87,7 @@ def test_dll_push_adds_new_item():
     l.push('val2')
     assert l.head.data == 'val2'
 
-
+   
 def test_push_to_empty_adds_value_to_head(dll_empty):
     """Test that the pushed node gives value to head."""
     dll_empty.push(1)
@@ -98,7 +99,7 @@ def test_push_to_empty_sets_head_and_tail(dll_empty):
     dll_empty.push(1)
     assert dll_empty.head is dll_empty.tail
 
-
+    
 def test_dll_push_two_new_item():
     """Test that push method adds 2 new items to linked list."""
     from dll import DoublyLinkedList
@@ -116,7 +117,7 @@ def test_dll_push_moves_old_head_to_new_heads_next():
     l.push('val2')
     assert l.head.next.data == 'val'
 
-
+    
 def test_append_adds_value_to_tail(dll_empty):
     """Test that appended value is the tail."""
     dll_empty.append(1)
@@ -139,7 +140,7 @@ def test_dll_pop_removes_head_and_returns_value():
     l.pop()
     assert l.head is None
 
-
+    
 def test_display_empty_dll(dll_empty):
     """Test will display empty."""
     assert dll_empty.display() == "()"
