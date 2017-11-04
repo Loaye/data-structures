@@ -6,7 +6,7 @@ class PriorityQueue(object):
 
     def insert(self, data, priority=0):
         "Add value to queue with data and optional"
-        if not isisntace(data, (int, float)):
+        if not isinstance(data, (int, float)):
             raise TypeError('Must be a number, try again')
         if priority in self.pq_dict:
             self.pq_dict[priority].append(data)
