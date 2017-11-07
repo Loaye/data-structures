@@ -69,24 +69,32 @@ class DoublyLinkedList(object):
         self._counter -= 1
         return output
 
-    def remove(self, data):
+    def remove(self, val):
         """Search for a given node value and remove it."""
-        
+        curr.prev = None
         curr = self.head
 
-        if self.head == data:
-            pop()
-
-        if self.tail == data:
-            shift()
-
         while curr:
-            if curr.data == data:
-                curr.prev.next_node = curr.next_node
-                curr.next_node.prev = curr.prev
-                self._counter -= 1
-                return curr
-            else:
-                curr = curr.next_node
-
+            if curr.data == val:
+                if self.head == self.tail:
+                    self.head = self.tail = None
+                    self._counter -= 1
+                    return
+                if curr == self.tail:
+                    self.tail.next_node = None
+                    curr.prev = None
+                    self._counter -= 1
+                    return
+                if prev:
+                    prev.next_node = curr.next_node
+                    curr.next_node.prev = curr.prev
+                    curr.next_node = curr.prev = None
+                    self._counter -= 1
+                    return
+                else:
+                    curr.next_node.prev = curr.next_node = None
+                    self._counter -= 1
+                    return
+            prev = curr
+            curr = prev.next_node
         raise ValueError("Node not in current List")
