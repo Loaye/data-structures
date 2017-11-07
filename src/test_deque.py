@@ -5,14 +5,14 @@ import pytest
 
 
 def test_deque_initializes_properly():
-    """."""
+    """Test that deque properly created."""
     from deque import Deque
     d = Deque()
     assert d
 
 
 def test_deque_appends_one_value():
-    """."""
+    """Test that deque adds one value."""
     from deque import Deque
     d = Deque()
     d.append(2)
@@ -20,7 +20,7 @@ def test_deque_appends_one_value():
 
 
 def test_appendleft_add_one_value():
-    """."""
+    """Test that appendleft adds one value."""
     from deque import Deque
     d = Deque()
     d.appendleft(4)
@@ -28,7 +28,7 @@ def test_appendleft_add_one_value():
 
 
 def test_deque_appends_one_value_on_the_end():
-    """."""
+    """Test that append adds one value on the end."""
     from deque import Deque
     d = Deque()
     d.append(6)
@@ -36,7 +36,7 @@ def test_deque_appends_one_value_on_the_end():
 
 
 def test_appendleft_add_one_value_on_the_front():
-    """."""
+    """Test that appendleft adds one value on the front."""
     from deque import Deque
     d = Deque()
     d.appendleft(8)
@@ -44,7 +44,7 @@ def test_appendleft_add_one_value_on_the_front():
 
 
 def test_deque_appends_two_valus_on_the_end():
-    """."""
+    """Test that append adds two values on the end."""
     from deque import Deque
     d = Deque()
     d.append(6)
@@ -53,7 +53,7 @@ def test_deque_appends_two_valus_on_the_end():
 
 
 def test_appendleft_adds_two_values_on_the_front():
-    """."""
+    """Test that append adds two values on the front."""
     from deque import Deque
     d = Deque()
     d.appendleft(6)
@@ -62,7 +62,7 @@ def test_appendleft_adds_two_values_on_the_front():
 
 
 def test_pop_removes_val_from_end_of_deque():
-    """."""
+    """Test that pop removes a node from the end of the list and returns the value."""
     from deque import Deque
     d = Deque()
     d.append(2)
@@ -74,7 +74,7 @@ def test_pop_removes_val_from_end_of_deque():
 
 
 def test_popleft_removes_val_from_end_of_deque():
-    """."""
+    """Test that pop removes a node from the front of the list and returns the value."""
     from deque import Deque
     d = Deque()
     d.append(2)
@@ -86,7 +86,7 @@ def test_popleft_removes_val_from_end_of_deque():
 
 
 def test_peek_returns_val_from_front_of_deque():
-    """."""
+    """Test that peek returns the value from the end but does not alter its node."""
     from deque import Deque
     d = Deque()
     d.append(2)
@@ -97,7 +97,7 @@ def test_peek_returns_val_from_front_of_deque():
 
 
 def test_peekleft_returns_val_from_end_of_deque():
-    """."""
+    """Test that peek returns the value from the front but does not alter its node."""
     from deque import Deque
     d = Deque()
     d.append(2)

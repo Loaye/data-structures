@@ -18,7 +18,14 @@ def test_push_adds_single_val_to_heap():
     bheap.push(3)
     assert bheap.heap.data == bheap.heap.data[3]
 
-
+   
+def test_pop_removes_node_returns_value():
+    """Test that pop removes a node and returns its value."""
+    from heap import BinaryHeap
+    bheap = BinaryHeap()
+    bheap.append(3)
+    assert bheap.heap.pop() == 3
+    
 # def test_heap_pop_always_sorted_order():
 #     """."""
 #     from heap import BinaryHeap
