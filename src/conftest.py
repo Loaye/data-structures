@@ -12,7 +12,7 @@ def dll_three_nodes():
     """."""
     from dll import DoublyLinkedList
     d = DoublyLinkedList
-    d.push(5)
+    d.data.push(5)
     d.push(10)
     d.push(15)
     return d
