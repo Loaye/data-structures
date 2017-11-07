@@ -3,7 +3,7 @@
 class Node(object):
     """This creates a node object."""
 
-    def __init__(self, data, next_node, prev):
+    def __init__(self, data, next_node=None, prev=None):
         """Constructor for the Node object."""
         self.data = data
         self.next_node = next_node
@@ -26,16 +26,28 @@ class DoublyLinkedList(object):
         """Will work with the len() function to find length of the DLL."""
         return self._counter
 
-    def push(self, val):
+    def push(self, data):
         """Add a new value to the head of the linked list."""
-        curr = Node(val, self.head)
-        self.head = curr.next_node.prev
+        curr = Node(data)
+        if self.head is None:
+            self.head = curr
+            self.tail = curr
+        else:
+            self.head.prev = curr
+            curr.next_node = self.head
+            self.head = curr
         self._counter += 1
 
-    def append(self, val):
+    def append(self, data):
         """Adds a node to the end/tail side of the DLL"""
-        curr = Node(val, self.tail)
-        self.tail = curr.prev.next_node
+        curr = Node(data)
+        if self.tail is None:
+            self.head = curr
+            self.tail = curr
+        else:
+            self.tail.next_node = curr
+            curr.prev = self.tail
+            self.tail = curr
         self._counter += 1
 
     def pop(self):
@@ -53,22 +65,23 @@ class DoublyLinkedList(object):
             raise IndexError("The List is empty, so there is nothing to shift/remove.")
         output = self.tail.data
         self.tail = self.tail.prev
+        self.tail.next_node = None
         self._counter -= 1
         return output
 
-    def remove(self, val):
+    def remove(self, data):
         """Search for a given node value and remove it."""
         
         curr = self.head
 
-        if self.head == val:
+        if self.head == data:
             pop()
 
-        if self.tail == val:
+        if self.tail == data:
             shift()
 
         while curr:
-            if curr.data == val:
+            if curr.data == data:
                 curr.prev.next_node = curr.next_node
                 curr.next_node.prev = curr.prev
                 self._counter -= 1
