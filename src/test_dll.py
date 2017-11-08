@@ -29,12 +29,6 @@ def test_node_object_exists():
     assert node
 
 
-def test_search_found(dll_empty):
-    """Test that search will find the given node value in the DLL."""
-    dll_empty.push(20)
-    assert dll_empty.search(20)
-
-
 def test_size_after_tail_has_been_removed(dll_three_nodes):
     """Test the size of the dll after a tail has been removed."""
     dll_three_nodes.remove(5)
@@ -46,7 +40,7 @@ def test_append_adds_value_to_tail(dll_empty):
     dll_empty.append(1)
     assert dll_empty.tail.data == 1
 
-    
+
 def test_node_has_attributes():
     """Test that Node has attributes."""
     from dll import Node
@@ -73,16 +67,7 @@ def test_counter():
     """"Test that counter properly adds and removes proper amount of nodes."""
     from dll import DoublyLinkedList
     l = DoublyLinkedList()
-    assert l._counter is None
-
-
-def test_dll_can_take_iterable():
-    """Test to see that list can take a list or tuple."""
-    from dll import DoublyLinkedList
-    a_list = [4, 3, 2, 6, 4, 9, 8]
-    l = DoublyLinkedList(a_list)
-    for item in a_list:
-        assert l.search(item).data == item
+    assert l._counter is 0
 
 
 def test_dll_push_adds_new_item():
@@ -93,7 +78,7 @@ def test_dll_push_adds_new_item():
     l.push('val2')
     assert l.head.data == 'val2'
 
-   
+
 def test_push_to_empty_adds_value_to_head(dll_empty):
     """Test that the pushed node gives value to head."""
     dll_empty.push(1)
@@ -119,15 +104,9 @@ def test_dll_push_moves_old_head_to_new_heads_next():
     """Test that push method properly reassigns head to head node."""
     from dll import DoublyLinkedList
     l = DoublyLinkedList()
-    l.push('val')
-    l.push('val2')
-    assert l.head.next.data == 'val'
-
-
-def test_append_adds_value_to_tail(dll_empty):
-    """Test that appended value is the tail."""
-    dll_empty.append(1)
-    assert dll_empty.tail == dll_empty.tail.data
+    l.push(5)
+    l.push(10)
+    assert l.head.next_node.data == 5
 
 
 def test_append_multiple_vals_to_tail(dll_empty):
@@ -145,20 +124,3 @@ def test_dll_pop_removes_head_and_returns_value():
     l.push('potato')
     l.pop()
     assert l.head is None
-
-
-def test_display_empty_dll():
-    """Test will display empty."""
-    from dll import DoublyLinkedList
-    dll_empty = DoublyLinkedList()
-    assert dll_empty.display() == "()"
-
-
-def test_display_filled_dll():
-    """Test to show the the values of all nodes."""
-    from dll import DoublyLinkedList
-    dll_empty = DoublyLinkedList()
-    dll_empty.append(5)
-    dll_empty.append(10)
-    dll_empty.append(15)
-    assert dll_empty.display() == "(5, 10, 15)"

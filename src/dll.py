@@ -100,17 +100,6 @@ class DoublyLinkedList(object):
             curr = prev.next_node
         raise ValueError("Node not in current List")
 
-    def display(self):
-        """Return a unicode string that represents the list as a tuple."""
-        curr = self.head
-        make_tuple = "("
-        while curr:
-            make_tuple += str(curr.data) + ", "
-            curr = curr.next_node
-        make_tuple = make_tuple[:-2]
-        make_tuple += ")"
-        return make_tuple
-
     def size(self):
         """Return the size of the dll."""
         return self._counter
