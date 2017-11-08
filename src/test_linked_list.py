@@ -88,14 +88,13 @@ def test_linked_list_size_returns_list_length():
     assert l.size() == 0
 
 
-@pytest.mark.parametrize('n', range(100))
-def test_linked_list_size_returns_list_length2(n):
+def test_linked_list_size_returns_list_length2():
     """Test that size method returns proper length from a random list."""
     from linked_list import LinkedList
     l = LinkedList()
-    for i in range(n):
+    for i in range(10):
         l.push(i)
-    assert l.size() == n
+        assert l.size() == i + 1
 
 
 def test_linked_list_search_empty_returns_none():
@@ -122,15 +121,14 @@ def test_linked_list_search__with_one_bad_search():
     assert l.search(0) is None
 
 
-@pytest.mark.parametrize('n', range(1, 10))
-def test_linked_list_search__with_one_bad_search2(n):
+def test_linked_list_search__with_one_bad_search2():
     """Test that checks the search method for a bad value."""
     from linked_list import LinkedList
     from random import randint
     l = LinkedList()
-    for i in range(1, n + 1):
+    for i in range(10):
         l.push(i)
-    search_me = randint(1, n)
+    search_me = randint(1, 10)
     assert l.search(search_me).data == search_me
 
 
