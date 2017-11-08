@@ -105,7 +105,7 @@ def test_push_to_empty_sets_head_and_tail(dll_empty):
     dll_empty.push(1)
     assert dll_empty.head is dll_empty.tail
 
-    
+
 def test_dll_push_two_new_item():
     """Test that push method adds 2 new items to linked list."""
     from dll import DoublyLinkedList
@@ -123,7 +123,7 @@ def test_dll_push_moves_old_head_to_new_heads_next():
     l.push('val2')
     assert l.head.next.data == 'val'
 
-    
+
 def test_append_adds_value_to_tail(dll_empty):
     """Test that appended value is the tail."""
     dll_empty.append(1)
@@ -146,16 +146,17 @@ def test_dll_pop_removes_head_and_returns_value():
     l.pop()
     assert l.head is None
 
-    
+
 def test_display_empty_dll(dll_empty):
     """Test will display empty."""
     assert dll_empty.display() == "()"
 
 
-def test_display_filled_dll(dll_empty):
+def test_display_filled_dll():
     """Test to show the the values of all nodes."""
+    from dll import DoublyLinkedList
+    dll_empty = DoublyLinkedList()
     dll_empty.append(5)
     dll_empty.append(10)
     dll_empty.append(15)
-    assert dll_three_nodes.display() == "(5, 10, 15)"
-
+    assert dll_empty.display() == "(5, 10, 15)"
