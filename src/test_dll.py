@@ -147,8 +147,10 @@ def test_dll_pop_removes_head_and_returns_value():
     assert l.head is None
 
 
-def test_display_empty_dll(dll_empty):
+def test_display_empty_dll():
     """Test will display empty."""
+    from dll import DoublyLinkedList
+    dll_empty = DoublyLinkedList()
     assert dll_empty.display() == "()"
 
 
