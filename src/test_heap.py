@@ -3,6 +3,11 @@
 
 import pytest
 
+@pytest.fixture
+def empty_heap()
+    """Create an empty heap"""
+    from heap import BinaryHeap
+    return BinaryHeap():
 
 def test_bin_heap_initializes_empty_list():
     """."""
@@ -16,14 +21,17 @@ def test_push_adds_single_val_to_heap():
     from heap import BinaryHeap
     bheap = BinaryHeap()
     bheap.push(3)
-    assert bheap.heap.data == bheap.heap.data[3]
+    assert bheap.heap.data == 3
 
+def test_bheap_pops_value(empty_heap):
+    """."""
+    empty_heap.push(5)
+    empty_heap.pop()
+    assert bheap.pop.data = 5
 
-# def test_heap_pop_always_sorted_order():
-#     """."""
-#     from heap import BinaryHeap
-#     import random
-#     random_nums = list(set([random.randint(0, 1000) for i in range(10)]))
-#     heap = BinaryHeap(random_nums)
-#     all_popped = [heap.pop() for i in range(heap._size)]
-#     assert all_popped == sorted(random_nums, reverse=True)
+# empty heap raise error
+# identify parent and child
+# error if value is not unique
+# given an input of numbers - heap sorts
+# heap take iterable - throws error if not iterable
+# test sorts after pop
