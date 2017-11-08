@@ -15,7 +15,7 @@ def dll_empty():
 def dll_three_nodes():
     """Set up the fixture process used for testing."""
     from dll import DoublyLinkedList
-    d = DoublyLinkedList
+    d = DoublyLinkedList()
     d.push(5)
     d.push(10)
     d.push(15)
@@ -39,6 +39,12 @@ def test_size_after_tail_has_been_removed(dll_three_nodes):
     """Test the size of the dll after a tail has been removed."""
     dll_three_nodes.remove(5)
     assert dll_three_nodes.size() == 2
+
+
+def test_append_adds_value_to_tail(dll_empty):
+    """Test that appended value is the tail."""
+    dll_empty.append(1)
+    assert dll_empty.tail.data == 1
 
     
 def test_node_has_attributes():
@@ -152,3 +158,4 @@ def test_display_filled_dll(dll_empty):
     dll_empty.append(10)
     dll_empty.append(15)
     assert dll_three_nodes.display() == "(5, 10, 15)"
+
