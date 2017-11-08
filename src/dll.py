@@ -39,9 +39,8 @@ class DoublyLinkedList(object):
             self.head = curr
         self._counter += 1
 
-
     def append(self, data):
-        """Adds a node to the end/tail side of the DLL"""
+        """Add a node to the end/tail side of the DLL."""
         curr = Node(data)
         if self.tail is None:
             self.head = curr
@@ -73,8 +72,9 @@ class DoublyLinkedList(object):
 
     def remove(self, val):
         """Search for a given node value and remove it."""
-        curr.prev = None
         curr = self.head
+        curr.prev = None
+
         while curr:
             if curr.data == val:
                 if self.head == self.tail:
@@ -99,3 +99,7 @@ class DoublyLinkedList(object):
             prev = curr
             curr = prev.next_node
         raise ValueError("Node not in current List")
+
+    def size(self):
+        """Return the size of the dll."""
+        return self._counter
