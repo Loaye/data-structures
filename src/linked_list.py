@@ -2,8 +2,9 @@
 
 
 class Node(object):
-    """This creates a node object."""
+    """Creates a node object"""
 
+    
     def __init__(self, data, next):
         """Constructor for the Node object."""
         self.data = data
@@ -11,7 +12,7 @@ class Node(object):
 
 
 class LinkedList(object):
-    """The class for containing object called LinkedList."""
+    """Class for containing object called LinkedList"""
 
     def __init__(self, iterable=()):
         """Constructor for the Linked List object."""
@@ -74,7 +75,6 @@ class LinkedList(object):
             curr = curr.next
         st = st[:-2] + ")"
         return st
-
 
 a_list = [4, 3, 2, 6, 1, 9, 8]
 newList = LinkedList(a_list)

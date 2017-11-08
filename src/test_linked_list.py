@@ -20,17 +20,16 @@ def test_linked_list_has_head():
 
 
 def test_linked_list_push_adds_new_item():
-    """Test that push method add a new item to Linked list."""
-    from linked_list import LinkedList
+    """Test that new item was added to list."""
+    from linked_list_code_base import LinkedList
     l = LinkedList()
     l.push('val')
-    l.push('val2')
-    assert l.head.data == 'val2'
+    assert l.head.data == 'val'
 
 
 def test_linked_list_push_two_new_item():
-    """Test that push method adds 2 new items to linked list."""
-    from linked_list import LinkedList
+    """Test that list pushed 2 items into the SLL."""
+    from linked_list_code_base import LinkedList
     l = LinkedList()
     l.push('val')
     l.push('val2')
@@ -142,7 +141,7 @@ def test_linked_list_can_take_iterable():
 
 
 def test_linked_list_display():
-    """Test to display a tuple in a linked list"""
+    """Test to display a tuple in a linked list."""
     from linked_list import LinkedList
     a_list = [4, 3, 2, 6, 1, 9, 8]
     new_list = LinkedList(a_list)
