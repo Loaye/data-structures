@@ -1,10 +1,11 @@
 """Create a Max Heap."""
 
+
 class BinaryHeap(object):
     """Instantiates a heap organized by max data values."""
 
     def __init__(self, iterable=[]):
-        """."""
+        """Initialize the Heap Data Structure."""
         self.heap = [0]
         self._counter = 0
         for i in iterable:
@@ -12,6 +13,7 @@ class BinaryHeap(object):
             self._floatup(len(self.heap) - 1)
 
     def __len__(self):
+        """Define length function."""
         return len(self.heap)
 
     def push(self, data):
@@ -28,18 +30,15 @@ class BinaryHeap(object):
 
     def pop(self):
         """Pop the head, or the largest value, off the heap."""
-        try:  
-            if len(self.heap) > 2:
-                self._swap(1, len(self.heap) - 1)
-                max = self.heap.pop()
-                self._bubbledown(1)
-            elif len(self.heap) == 2:
-                max = self.heap.pop()
-            else:
-                max = False
-            return max
-        except IndexError:
+        if len(self.heap) > 2:
+            self._swap(1, len(self.heap) - 1)
+            max = self.heap.pop()
+            self._bubbledown(1)
+        elif len(self.heap) == 2:
+            max = self.heap.pop()
+        else:
             raise IndexError("Can't pop from an empty list")
+        return max
 
     def _swap(self, i, j):
         """Swap 2 nodes in the heap for sorting purposes."""
