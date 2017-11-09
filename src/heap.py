@@ -28,15 +28,18 @@ class BinaryHeap(object):
 
     def pop(self):
         """Pop the head, or the largest value, off the heap."""
-        if len(self.heap) > 2:
-            self._swap(1, len(self.heap) - 1)
-            max = self.heap.pop()
-            self._bubbledown(1)
-        elif len(self.heap) == 2:
-            max = self.heap.pop()
-        else:
-            max = False
-        return max
+        try:  
+            if len(self.heap) > 2:
+                self._swap(1, len(self.heap) - 1)
+                max = self.heap.pop()
+                self._bubbledown(1)
+            elif len(self.heap) == 2:
+                max = self.heap.pop()
+            else:
+                max = False
+            return max
+        except IndexError:
+            raise IndexError("Can't pop from an empty list")
 
     def _swap(self, i, j):
         """Swap 2 nodes in the heap for sorting purposes."""

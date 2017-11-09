@@ -29,6 +29,12 @@ def test_bheap_pops_value(empty_heap):
     empty_heap.pop()
     assert bheap.pop.data = 5
 
+def test_when_pop_is_called_on_empty_heap_raise_error(empty_heap):
+    """Raises an error when pop is called on an empty heap."""
+    with pytest.raises(IndexError):
+        empty_heap.pop()
+
+
 # empty heap raise error
 # identify parent and child
 # error if value is not unique
