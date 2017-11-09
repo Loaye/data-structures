@@ -65,4 +65,3 @@ class BinaryHeap(object):
         if largest != index:
             self._swap(index, largest)
             self._bubbledown(largest)
-

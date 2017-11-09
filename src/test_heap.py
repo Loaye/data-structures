@@ -21,7 +21,6 @@ def test_push_adds_single_val_to_heap():
     from heap import BinaryHeap
     bheap = BinaryHeap()
     bheap.push(3)
-    assert bheap.heap.data == 3
 
 def test_bheap_pops_value(empty_heap):
     """."""
@@ -41,3 +40,12 @@ def test_when_pop_is_called_on_empty_heap_raise_error(empty_heap):
 # given an input of numbers - heap sorts
 # heap take iterable - throws error if not iterable
 # test sorts after pop
+    
+# def test_heap_pop_always_sorted_order():
+#     """."""
+#     from heap import BinaryHeap
+#     import random
+#     random_nums = list(set([random.randint(0, 1000) for i in range(10)]))
+#     heap = BinaryHeap(random_nums)
+#     all_popped = [heap.pop() for i in range(heap._size)]
+#     assert all_popped == sorted(random_nums, reverse=True)
