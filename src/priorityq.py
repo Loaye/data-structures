@@ -2,7 +2,10 @@
 
 class PriorityQueue(object):
     """Initialize of PriorityQueue class."""
-    self.pq_dict = {}
+    
+    def __init__(self):
+        """Initialize Priorirty Queue"""
+        self.pq_dict = {}
 
     def insert(self, data, priority=0):
         "Add value to queue with data and optional"
