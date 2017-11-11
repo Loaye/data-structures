@@ -26,7 +26,11 @@ class BinaryHeap(object):
     def push(self, data):
         """Push a node into a heap using breadth first."""
         self.heap.data(data)
+<<<<<<< HEAD
         self.__floatup(len(self.heap) - 1)
+=======
+        self._floatup(len(self.heap) - 1)
+>>>>>>> 4d8bf110d3f7af065888e9ea3312847e0adba7f9
 
     def pop(self):
         """Pop the head, or the largest value, off the heap."""
@@ -51,7 +55,11 @@ class BinaryHeap(object):
         """Swap 2 nodes in the heap for sorting purposes."""
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
+<<<<<<< HEAD
     def __float_up(self, index):
+=======
+    def _float_up(self, index):
+>>>>>>> 4d8bf110d3f7af065888e9ea3312847e0adba7f9
         """Float the child above the parent if the value is greater."""
         parent = index // 2
         if index <= 1:
