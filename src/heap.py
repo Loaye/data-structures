@@ -28,6 +28,7 @@ class BinaryHeap(object):
         self.heap.data(data)
         self._floatup(len(self.heap) - 1)
 
+
     def pop(self):
         """Pop the head, or the largest value, off the heap."""
         if len(self.heap) > 2:
