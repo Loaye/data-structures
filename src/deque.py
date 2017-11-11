@@ -20,6 +20,10 @@ class Deque(object):
         self.tail = None
         self._counter = 0
 
+    def __len__(self):
+        """Provide the length of the Deque"""
+        return self._counter
+
     def append(self, val):
         """Function adds value the end of the deque."""
         curr = Node(val, prev=self.tail)
@@ -43,22 +47,32 @@ class Deque(object):
     def pop(self):
         """Remove a value from the end of the deque and returns it."""
         if not self.tail:
-            raise IndexError("The List is empty, there's nothing to pop.")
-        output = self.tail.val
-        self.tail = self.tail.prev
-        self.tail.next_node = None
+            raise IndexError("Can not pop an empty list")
+        if self.tail == self.head:
+            curr = self.tail
+            self.tail = self.head = None
+            self._counter -= 1
+            return curr.val
+        curr = self.tail
+        self.tail = curr.next_node
+        self.tail.prev = None
         self._counter -= 1
-        return output
+        return curr.val
 
     def popleft(self):
         """Remove a value from the front of the deque and returns it."""
         if not self.head:
-            raise IndexError("The List is empty, there's nothing to pop.")
-        output = self.head.val
-        self.head = self.head.next_node
+            raise IndexError("Can not pop an empty list")
+        if self.head == self.tail:
+            curr = self.head
+            self.head = self.tail = None
+            self._counter -= 1
+            return curr.val
+        curr = self.head
+        self.head = curr.next_node
         self.head.prev = None
         self._counter -= 1
-        return output
+        return curr.val
 
     def peek(self):
         """Return the next value that would be returned by pop but leaves thevalue in the deque."""
