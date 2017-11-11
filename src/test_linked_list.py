@@ -86,7 +86,6 @@ def test_linked_list_size_returns_list_length():
     l = LinkedList()
     assert l.size() == 0
 
-
 def test_linked_list_size_returns_list_length2():
     """Test that size method returns proper length from a random list."""
     from linked_list import LinkedList
@@ -94,7 +93,6 @@ def test_linked_list_size_returns_list_length2():
     for i in range(10):
         l.push(i)
         assert l.size() == i + 1
-
 
 def test_linked_list_search_empty_returns_none():
     """."""
@@ -119,7 +117,7 @@ def test_linked_list_search__with_one_bad_search():
     l.push(1)
     assert l.search(0) is None
 
-
+    
 def test_linked_list_search__with_one_bad_search2():
     """Test that checks the search method for a bad value."""
     from linked_list import LinkedList

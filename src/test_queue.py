@@ -60,4 +60,3 @@ def test_queue_is_empty_peek():
     from queue import Queue
     queue = Queue()
     assert queue.peek() is None
-
