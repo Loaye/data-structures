@@ -10,7 +10,6 @@ class Node(object):
         self.prev = prev
         self.next_node = next_node
 
-
 class Deque(object):
     """The class for containing an object called Deque."""
 
