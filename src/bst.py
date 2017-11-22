@@ -76,7 +76,11 @@ class BinarySearchTree:
 
     def balance(self):
         """Return Int ."""
-        pass
+        if root is None:
+            return 0
+        else:
+            return max(self.depth(root.left) - self.depth(root.right))
+
 
 if __name__ == '__main__':
 
@@ -89,6 +93,3 @@ if __name__ == '__main__':
     root.insert(7)
     root.insert(15)
     root.insert(12)
-
-
-
