@@ -130,4 +130,3 @@ class BinarySearchTree:
                     yield child.value
 
 if __name__ == '__main__':
-
