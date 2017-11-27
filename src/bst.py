@@ -81,15 +81,53 @@ class BinarySearchTree:
         else:
             return max(self.depth(root.left) - self.depth(root.right))
 
+    def in_order(self):
+        """Traverse the bst nodes in order."""
+        if self.root is None:
+            raise ValueError("Tree is empty.")
+        curr = self.root
+        order = []
+        while curr or order:
+            if curr:
+                order.append(curr)
+                curr = curr.left
+            else:
+                curr = order.pop()
+                yield curr.value
+                curr = curr.right
+
+    def pre_order(self):
+        """Traverse the bst nodes by pre order."""
+        if self.root is None:
+            raise ValueError("Tree is empty.")
+        curr = self.root
+        order = []
+        while curr or order:
+            if curr:
+                yield curr.value
+                if curr.right:
+                    order.append(curr.right)
+                curr = curr.left
+            else:
+                curr = order.pop()
+
+    def post_order(self):
+        """Traverse the bst nodes in post order."""
+        if self.root is None:
+            raise ValueError("Tree is empty.")
+        curr = self.root
+        child = None
+        order = []
+        while curr or order:
+            if curr:
+                order.append(curr)
+                curr = curr.left
+            else:
+                if order[-1].right and order[-1].right is not child:
+                    curr = order[-1].right
+                else:
+                    child = order.pop()
+                    yield child.value
 
 if __name__ == '__main__':
 
-    root = Node(8)
-    root.insert(5)
-    root.insert(11)
-    root.insert(1)
-    root.insert(6)
-    root.insert(3)
-    root.insert(7)
-    root.insert(15)
-    root.insert(12)
