@@ -53,7 +53,7 @@ def test_deque_appends_two_valus_on_the_end():
 
 
 def test_appendleft_adds_two_values_on_the_front():
-    """Test that append adds two values on the front."""
+    """Test that append adds two values on the front.""">>>>>>> cc48ed5933edacc4c37aac91c010335c453a5ee0
     from deque import Deque
     d = Deque()
     d.appendleft(6)
