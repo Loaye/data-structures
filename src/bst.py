@@ -93,7 +93,7 @@ class BinarySearchTree:
                 curr = curr.left
             else:
                 curr = order.pop()
-                yield curr.value
+                yield curr.val
                 curr = curr.right
 
     def pre_order(self):
@@ -129,4 +129,90 @@ class BinarySearchTree:
                     child = order.pop()
                     yield child.value
 
+    def delete(self, data):
+        """Remove a node from the BST."""
+        if self.root is None:  # empty tree
+            return False
+        elif self.root.val == data:  # data is in root node.
+            if self.root.leftChild is None and self.root.rightChild is None:
+                self.root = None
+            elif self.root.leftChild and self.root.rightChild is None:
+                self.root = self.root.leftChild
+            elif self.root.leftChild is None and self.root.rightChild:
+                self.root = self.root.rightChild
+            elif self.root.leftChild and self.root.rightChild:
+                delNodeParent = self.root
+                delNode = self.root.rightChild
+                while delNode.leftChild:
+                    delNodeParent = delNode
+                    delNode = delNode.leftChild
+
+                self.root.val = delNode.val
+                if delNode.rightChild:
+                    if delNodeParent.val > delNode.val:
+                        delNodeParent.leftChild = delNode.rightChild
+                    elif delNodeParent.val < delNode.rightChild:
+                        delNodeParent.rightChild = delNode.rightChild
+                else:
+                    if delNode.val < delNodeParent.val:
+                        delNodeParent.leftChild = None
+                    else:
+                        delNodeParent.rightChild = None
+
+            return True
+
+        parent = None
+        node = self.root
+
+        while node and node.val != data:  # find node to remove
+            parent = node
+            if data < node.val:
+                node = node.leftChild
+            elif data > node.val:
+                node = node.rightChild
+
+        if node is None or node.val != data:  # data not found.
+            return False
+
+        elif node.leftChild is none and left child.rightChild is None:  # Remove node has no children
+            if data < parent.val:
+                parent.leftChild = None
+            else:
+                parent.rightChild = None
+            return True
+
+        elif node.leftChild and node.rightChild is None:  # Section for having left child only.
+            if data < parent.val:
+                parent.leftChild = node.leftChild
+            else:
+                parent.rightChild = node.leftChild
+            return True
+
+        elif node.leftChild is None and node.rightChild:  # Section for having Right child only.
+            if data < parent.val:
+                parent.leftChild = node.rightChild
+            else:
+                parent.rightChild = node.rightChild
+            return True
+
+        else:  # node has left AND right children
+            delNodeParent = node
+            delNode = node.rightChild
+            while delNode.leftChild:
+                delNodeParent = delNode
+                delNode = delNode.leftChild
+
+            node.val = delNode.val
+            if delNode.rightChild:
+                if delNodeParent.val > delNode.val:
+                    delNodeParent.leftChild = delNode.rightChild
+                elif delNodeParent.val < delNode.val:
+                    delNodeParent.rightChild = delNode.rightChild
+            else:
+                if delNode.val < dalNodeParent.val:
+                    delNodeParent.leftchild = None
+                else:
+                    delNodeParent.rightChild = None
+
+                    
 if __name__ == '__main__':
