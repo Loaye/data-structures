@@ -62,6 +62,13 @@ class BinarySearchTree:
         else:
             return max(self.depth(root.left), self.depth(root.right)) + 1
 
+    def balance(self, root):
+        """Return Int ."""
+        if root is None:
+            return 0
+        else:
+            return max(self.depth(root.left) - self.depth(root.right))
+
     def contains(self, val):
         """Return a boolean if val is in BST."""
         if self.root is not None:
@@ -74,12 +81,18 @@ class BinarySearchTree:
             return self.right.val
         return False
 
-    def balance(self):
-        """Return Int ."""
-        if root is None:
-            return 0
-        else:
-            return max(self.depth(root.left) - self.depth(root.right))
+    def breath_first(self):
+        """Traverse the BST by breath first method."""
+        if self.root is None:
+            raise ValueError('The tree is empty, no nodes to return.')
+        bft = [self.root]
+        while bft:
+            current = bft.pop(0)
+            if current.left:
+                bft.append(current.left)
+            if current.right:
+                bft.append(current.right)
+            yield current.data
 
     def in_order(self):
         """Traverse the bst nodes in order."""
@@ -131,9 +144,12 @@ class BinarySearchTree:
 
     def delete(self, data):
         """Remove a node from the BST."""
-        if self.root is None:  # empty tree
+        # empty tree
+        if self.root is None:
             return False
-        elif self.root.val == data:  # data is in root node.
+
+        # data is in root node.
+        elif self.root.val == data:
             if self.root.leftChild is None and self.root.rightChild is None:
                 self.root = None
             elif self.root.leftChild and self.root.rightChild is None:
@@ -146,7 +162,6 @@ class BinarySearchTree:
                 while delNode.leftChild:
                     delNodeParent = delNode
                     delNode = delNode.leftChild
-
                 self.root.val = delNode.val
                 if delNode.rightChild:
                     if delNodeParent.val > delNode.val:
@@ -158,44 +173,48 @@ class BinarySearchTree:
                         delNodeParent.leftChild = None
                     else:
                         delNodeParent.rightChild = None
-
             return True
-
         parent = None
         node = self.root
 
-        while node and node.val != data:  # find node to remove
+        # find node to remove
+        while node and node.val != data:
             parent = node
             if data < node.val:
                 node = node.leftChild
             elif data > node.val:
                 node = node.rightChild
 
-        if node is None or node.val != data:  # data not found.
+        # data not found.
+        if node is None or node.val != data:
             return False
 
-        elif node.leftChild is none and left child.rightChild is None:  # Remove node has no children
+        # Remove node has no children
+        elif node.leftChild is None and node.rightChild is None:
             if data < parent.val:
                 parent.leftChild = None
             else:
                 parent.rightChild = None
             return True
 
-        elif node.leftChild and node.rightChild is None:  # Section for having left child only.
+        # Section for having left child only.
+        elif node.leftChild and node.rightChild is None:
             if data < parent.val:
                 parent.leftChild = node.leftChild
             else:
                 parent.rightChild = node.leftChild
             return True
 
-        elif node.leftChild is None and node.rightChild:  # Section for having Right child only.
+        # Section for having Right child only.
+        elif node.leftChild is None and node.rightChild:
             if data < parent.val:
                 parent.leftChild = node.rightChild
             else:
                 parent.rightChild = node.rightChild
             return True
 
-        else:  # node has left AND right children
+        # node has left AND right children
+        else:
             delNodeParent = node
             delNode = node.rightChild
             while delNode.leftChild:
@@ -209,10 +228,73 @@ class BinarySearchTree:
                 elif delNodeParent.val < delNode.val:
                     delNodeParent.rightChild = delNode.rightChild
             else:
-                if delNode.val < dalNodeParent.val:
+                if delNode.val < delNodeParent.val:
                     delNodeParent.leftchild = None
                 else:
                     delNodeParent.rightChild = None
 
-                    
+
 if __name__ == '__main__':
+    import timeit
+
+    insert_time_ub = BinarySearchTree()
+    num = (x for x in range(1000))
+    insert_unbalanced = timeit.timeit(
+        'insert_time_ub.insert(next(num))',
+        setup='from __main__ import insert_time_ub, num',
+        number=1000)
+
+    search_time_ub = BinarySearchTree()
+    for i in range(100):
+        search_time_ub.insert(i)
+    search_unbalanced = timeit.timeit(
+        'search_time_ub.search(99)',
+        setup='from __main__ import search_time_ub',
+        number=1000)
+
+    search_unbalanced_head = timeit.timeit(
+        'search_time_ub.search(0)',
+        setup='from __main__ import search_time_ub',
+        number=1000)
+
+    insert_time_b = BinarySearchTree()
+
+    def insert_time(val):
+        """."""
+        if (500 + val) % 2 == 0:
+            insert_time_b.insert(500 + val)
+        else:
+            insert_time_b.insert(500 - val)
+
+    num_b = (x for x in range(1000))
+    insert_balanced = timeit.timeit(
+        'insert_time(next(num_b))',
+        setup='from __main__ import insert_time, num_b',
+        number=1000)
+
+    search_time_b = BinarySearchTree()
+    for i in range(1000):
+        if (500 + i) % 2 == 0:
+            search_time_b.insert(500 + i)
+        else:
+            search_time_b.insert(500 - i)
+
+    search_balanced_leaf = timeit.timeit(
+        'search_time_b.search(999)',
+        setup='from __main__ import search_time_b',
+        number=1000)
+
+    search_balanced_head = timeit.timeit(
+        'search_time_b.search(500)',
+        setup='from __main__ import search_time_b',
+        number=1000)
+
+    print('The following time relates to worst case insert.')
+    print('Insert unbalanced: {}'.format(insert_unbalanced))
+    print('Insert balanced: {}'.format(insert_balanced))
+    print('\nThe following time relates to worst case search.')
+    print('Search unbalanced leaf: {}'.format(search_unbalanced))
+    print('Search balanced leaf: {}'.format(search_balanced_leaf))
+    print('\nThe following time relates to best base search.')
+    print('Search unbalanced head: {}'.format(search_unbalanced_head))
+    print('Search balanced head: {}'.format(search_balanced_head))
