@@ -44,7 +44,7 @@ class BinaryHeap(object):
         """Swap 2 nodes in the heap for sorting purposes."""
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
-    def _floatup(self, index):
+    def _float_up(self, index):
         """Float the child above the parent if the value is greater."""
         parent = index // 2
         if index <= 1:
